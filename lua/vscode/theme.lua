@@ -131,7 +131,7 @@ theme.set_highlights = function(opts)
     hl(0, '@keyword.repeat', { fg = c.vscPink, bg = 'NONE' })
     hl(0, '@keyword.return', { fg = c.vscPink, bg = 'NONE' })
     hl(0, '@keyword.exception', { fg = c.vscPink, bg = 'NONE' })
-    hl(0, '@keyword.import', { fg = c.vscPink, bg = 'NONE' })
+    hl(0, '@keyword.import', { fg = c.vscBlue, bg = 'NONE' })
     hl(0, '@operator', { fg = c.vscFront, bg = 'NONE' })
     hl(0, '@type', { fg = c.vscBlueGreen, bg = 'NONE' })
     hl(0, '@type.qualifier', { fg = c.vscBlue, bg = 'NONE' })
@@ -162,7 +162,7 @@ theme.set_highlights = function(opts)
     hl(0, '@diff.delta', { link = 'DiffChange' })
 
     -- LSP semantic tokens
-    hl(0, '@type.builtin', { fg = c.vscBlue, bg = 'NONE' })
+    hl(0, '@type.builtin', { fg = c.vscBlueGreen, bg = 'NONE' })
     hl(0, '@lsp.typemod.type.defaultLibrary', { link = '@type.builtin' })
     hl(0, '@lsp.type.type', { link = '@type' })
     hl(0, '@lsp.type.typeParameter', { link = '@type' })
@@ -181,6 +181,11 @@ theme.set_highlights = function(opts)
     hl(0, '@modifier', { link = 'Identifier' })
     hl(0, '@regexp', { fg = c.vscRed, bg = 'NONE' })
     hl(0, '@decorator', { link = 'Identifier' })
+
+    -- Rust
+    hl(0, '@lsp.mod.mutable.rust', { underline = true })
+    hl(0, '@string.escape.rust', { fg = c.vscYellowOrange })
+    hl(0, '@lsp.type.selfTypeKeyword.rust', { fg = c.vscBlue })
 
     -- Markdown
     hl(0, 'markdownBold', { fg = isDark and c.vscBlue or c.vscYellowOrange, bold = true })
@@ -578,11 +583,14 @@ theme.set_highlights = function(opts)
     -- HiPhish/rainbow-delimiters.nvim
     hl(0, 'RainbowDelimiterRed', { fg = c.vscPink, bg = 'NONE' })
     hl(0, 'RainbowDelimiterOrange', { fg = c.vscOrange, bg = 'NONE' })
-    hl(0, 'RainbowDelimiterYellow', { fg = c.vscYellowOrange, bg = 'NONE' })
+    -- hl(0, 'RainbowDelimiterYellow', { fg = c.vscYellowOrange, bg = 'NONE' })
     hl(0, 'RainbowDelimiterGreen', { fg = c.vscGreen, bg = 'NONE' })
     hl(0, 'RainbowDelimiterCyan', { fg = c.vscBlueGreen, bg = 'NONE' })
-    hl(0, 'RainbowDelimiterBlue', { fg = c.vscMediumBlue, bg = 'NONE' })
-    hl(0, 'RainbowDelimiterViolet', { fg = c.vscViolet, bg = 'NONE' })
+    -- hl(0, 'RainbowDelimiterBlue', { fg = c.vscMediumBlue, bg = 'NONE' })
+    -- hl(0, 'RainbowDelimiterViolet', { fg = c.vscViolet, bg = 'NONE' })
+    hl(0, 'RainbowDelimiterYellow', { fg = '#FFD602' })
+    hl(0, 'RainbowDelimiterViolet', { fg = '#CE6DD6' })
+    hl(0, 'RainbowDelimiterBlue', { fg = '#4FC1FF' })
 
     -- rcarriga/nvim-dap-ui
     -- Source: https://github.com/rcarriga/nvim-dap-ui/blob/master/lua/dapui/config/highlights.lua
